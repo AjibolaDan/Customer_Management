@@ -4,7 +4,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 export interface SearchCriteria {
   searchTerm: string;
-  searchBy: 'name' | 'email' | 'phone';
+  searchBy: 'name' | 'username' | 'email' | 'phone';
 }
 
 @Component({
@@ -23,7 +23,7 @@ export class SearchCustomerComponent {
     this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged()
-    ).subscribe(value => {
+    ).subscribe((value: any) => {
       this.emitSearch(value || '');
     });
   }
@@ -31,7 +31,7 @@ export class SearchCustomerComponent {
   emitSearch(searchTerm: string) {
     this.search.emit({
       searchTerm,
-      searchBy: this.searchByControl.value as 'name' | 'email' | 'phone'
+      searchBy: this.searchByControl.value as 'name' | 'username' | 'email' | 'phone'
     });
   }
 }

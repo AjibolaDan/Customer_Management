@@ -1,7 +1,7 @@
 .search-container {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding: 1rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.062);
 }
 
 mat-form-field {

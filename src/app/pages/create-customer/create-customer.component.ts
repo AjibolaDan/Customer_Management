@@ -83,7 +83,7 @@ export class CreateCustomerComponent implements OnInit {
         });
         this.router.navigate(['/customer']);
       },
-      error: (error) => {
+      error: (error: { message: string; }) => {
         this.isSubmitting = false;
         this.snackBar.open('Error creating customer: ' + error.message, 'Close', {
           duration: 5000,
